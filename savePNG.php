@@ -1,0 +1,32 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	// collect value of input field
+	$PNGdatoteka = $_POST['pngFile'];
+	if (empty($PNGdatoteka)) {
+		echo "Name is empty";
+	} else {
+		$path = "results";
+		# poisci sliko z najvecjo stevilko
+		if ($handle = opendir($path)) {
+			while (false !== ($entry = readdir($handle))) {
+				if ($entry != "." && $entry != "..") {
+					if(!is_dir($entry)){
+						$myFile[] = substr($entry,0,strrpos($entry, "."));
+					}
+				}
+			}
+			closedir($handle);
+		}
+		rsort($myFile,SORT_NUMERIC);
+		$nextFileNumber = $myFile[0]+1;
+		
+		# zapisi datoteko
+		$pathNewFile = $path.'/'.$nextFileNumber.'.png';
+		$newFile = fopen($pathNewFile, "w") or die("Unable to open file!");
+		fwrite($newFile, file_get_contents($PNGdatoteka));
+		fclose($newFile);
+	}
+	
+}
+
+?>

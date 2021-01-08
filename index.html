@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Digitalna kleksografija</title>
+		<link rel="stylesheet" href="stil.css">
+		<meta charset="UTF-8">
+		<link rel="icon" href="favicon/favicon-16x16.png" type="image/gif" sizes="16x16">
+	</head>
+	<body>
+		<div id="displayMessageWrapper">
+			<div id="loadingCircle"></div>
+			<div id="errorText" style="display:none"></div>
+		</div>
+		<div id="infoText"></div>
+		<video id="webcamVideoFeed" autoplay="autoplay" width="640" height="480"></video>
+		
+		<main id="canvasWrapper">
+			<div id="naslov" class="text">Digitalna kleksografija</div>
+			<div id="bothCanvases">
+				<canvas id="canvasDraw">Your browser does not support the HTML canvas tag.</canvas>
+				<canvas id="canvasDrawMirror">Your browser does not support the HTML canvas tag.</canvas>
+			</div>
+		</main>
+		
+		<div id="okolicaPlatna">
+			<div id="wrapperWebcam">
+				<canvas id="webcamCanvas" width="300" height="225">Your browser does not support the HTML canvas tag.</canvas>
+				<p id="colorPaletteText">Barvna paleta:</p>
+				<div id="colorPalette"> </div>
+			</div>
+			<div> </div>
+			
+			<div id="desnoPlatna" style="display:none"> 
+				<p>Zadnjih 5 umetnin:</p>
+				<div id="stareGrafikeWrapperDesno">
+					<img id="staraGrafikaDesno" src="">
+				</div>
+			</div>
+			
+		</div>
+		
+		<div id="navigacija">
+			<nav>
+				<button id="restartBtn">Novo platno</button>
+				<button id="hideWebcamBtn">Izklopi prikaz kamere</button>
+				<button id="navodilaBtn">Navodila</button>
+				<button id="vzrokiBtn">Vzroki nedelovanja</button>
+				<button id="vizitkaBtn">Vizitka</button>
+				<button id="idejaBtn">Ideja</button>
+				<button id="tehnologijeBtn">Tehnologije</button>
+				<button id="exportBtn" disabled>Izvozi rezultat</button>
+			</nav>
+		</div>
+		<!--<div id="textSpodaj" class="text">
+			
+		</div>-->
+		
+		<div id="stareGrafikeModal" class="modal">
+			<div id="stareGrafikeWrapper">
+				<img id="staraGrafika" src="results/1.png">
+			</div>
+		</div>
+		
+		<div id="navodilaModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<br/>
+				<h3>Navodila za uporabo:</h3>
+				<br/>
+				<p>Z odprto dlanjo 🤚 premikaj rdečo piko 🔴 po papirju, nato pa stisni roko v pest ✊ in pokapljaj črnilo po papirju.<br/>
+					Ko je papir pokapljan, pa z "zajčkom" ✌️ prepogni papir in si oglej rezultat.
+				</p>
+				<p>Razdalja roke od ekrana (kamere) določa barvo kapljice, bližje kot je roka bolj temna je kapljica, dlje kot je roka bolj svetla je kapljica.</p>
+				<p>Če sistem ne zazna nobene roke v določenem času, se začnejo prikazovati stari izdelki.</p>
+				<p>Če je papir pokapljan in sistem ne zazna nobene roke, se papir samodejno prepogne po določenem času.</p>
+				<p>Ko je papir prepognjen se izdelek samodejno shrani in po določenem času se papir resetira na začetno stanje.</p>
+			</div>
+		</div>
+		
+		<div id="tehnologijeModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<br/>
+				<h3>Uporabljene napredne tehnologije</h3>
+				<br/>
+				<p><a href="//handsfree.js.org/" target="blank">handsfree.js</a></p>
+				<p><a href="//github.com/andypotato/fingerpose" target="blank">fingerpose.js</a></p>
+				<p><a href="http://paperjs.org/" target="blank">Paper.js</a></p>
+			</div>
+		</div>
+		
+		<div id="vizitkaModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				
+				<br/>
+				<h3>Vizitka</h3>
+				<br/>
+				<p>Spletna aplikacija 'Digitalna kleksografija' je bila ustvarjena za projektno nalogo<br/>
+					pri predmetu Interaktivnost in oblikovanje informacij (IOI)<br/>
+					na Fakulteti za Računalništvo in Informatiko (FRI).
+				</p>
+				<br/>
+				<p>Avtor: <a href="//www.linkedin.com/in/matja%C5%BE-rupnik-461490178/" target="blank">Matjaž Rupnik</a></p>
+				<p>Ideja: Amadea Ris (ALUO)</p>
+				<p>Mentorja: <a href="//fri.uni-lj.si/sl/o-fakulteti/osebje/franc-solina" target="blank">Franc Solina</a> in <a href="//www.fri.uni-lj.si/sl/o-fakulteti/osebje/borut-batagelj" target="blank">Borut Batagelj</a></p>
+			</div>
+		</div>
+		
+		<div id="idejaModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<br/>
+				<h3>Opis ideje</h3>
+				<blockquote>
+					Amadea Ris (ALUO):<br/>
+					Javljam se z idejo za naš predmet. In sicer sem razmišljala o tehniki kleksografije, ki jo v svoji praksi kar veliko
+					uporabljam (uporabljal jo je tudi Rorschach za svoje inkblote). Ta tehnika deluje tako, da se list papirja prepogne,
+					nanj kane kaplje barve, še sveže prepogne in podrgne, da se barva razlije znotraj papirja. Ko odpremo list, se
+					vsakič ustvarijo unikatni vzorci in mešanja barv.<br/>
+					<br/>
+					Moje vprašanje je, ali bi lahko nekaj takega ustvarila tudi digitalno?<br/>
+					Ta umetniški generator bi z vsakim klikom spremenil to preslikavo.<br/>
+					<br/>
+					Nekaj parametrov, ki sem jih lahko izluščila:<br/>
+					- naključna izbira barv (npr od 2-10 barv)<br/>
+					- naključna razporeditev barv (po polovici)<br/>
+					- simetrična preslikava po vertikali (na polovici)<br/>
+					- ostane še zadnji korak - razporeditev barve, ki analogno nastane z podrsavanjem po papirju, da se barva
+					razmaže. Kako doseči učinek spontanega razlitja barv? Kot na primer premikanje tekočine....
+				</blockquote>
+			</div>
+		</div>
+		
+		<div id="vzrokiModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<br/>
+				<h3>Vzroki za nepravilno delovanje</h3>
+				<br/>
+				<p>
+					Zaznavanje pesti deluje s pomočjo kamere na računalniku, problem počasnega oz. ne zaznavanja je lahko posledica vsaj štirih razlogov, to so:<br/>
+					<ul>
+						<li>preozek zorni kot na nekaterih kamerah (roka ni več v območju slike kamere),</li>
+						<li>ločljivosti kamere, ki je lahko na nekaterih starejših laptopih/kamerah zelo slaba,</li>
+						<li>slaba osvetlitev roke - svetloba zelo močno vpliva na zaznavanje,</li>
+						<li>šibka procesorska moč računalnika, saj je zaznavanje roke iz slike kamere (v živo) zelo procesorsko zahtevna. Na šibkejših računalnikih je to lahko problem, kar se kaže kot počasno, nenatančno ali neodzivno zaznavanje.</li>
+						<li>Spletna aplikacija je bila pripravljena za zaslone HD (1920x1080), na manjših zaslonih je možnost prekrivanja elementov!</li>
+					</ul>
+				</p>
+				<br/>
+			</div>
+		</div>
+		
+	</body>
+	
+	<script src="jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="./skriptaModal.js" ></script>
+	
+	<script src="https://unpkg.com/@tensorflow/tfjs-core@2.7.0/dist/tf-core.min.js"></script>
+	<script src="https://unpkg.com/@tensorflow/tfjs-backend-cpu@2.7.0/dist/tf-backend-cpu.min.js"></script>
+	<script src="https://unpkg.com/@tensorflow/tfjs-converter@2.7.0/dist/tf-converter.min.js"></script>
+	<script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.7.0/dist/tf-backend-webgl.min.js"></script> <!-- Alternatively you can use the WASM backend: <script src="https://unpkg.com/@tensorflow/tfjs-backend-wasm@2.1.0/dist/tf-backend-wasm.js"></script> -->
+	<script src="https://unpkg.com/@tensorflow-models/handpose@0.0.6/dist/handpose.min.js"></script>
+	
+	<script type="text/javascript" src="./lib/fingerpose.min.js" ></script>
+	<script type="text/javascript" src="./lib/paper-full.min.js"></script>
+	
+	<script type="text/javascript" src="./skriptaKlekso.js" ></script>
+</html>
+<!--
+Programmed by:
+█▀▄▀█ ▄▀█ ▀█▀ ░░█ ▄▀█ ▀█   █▀█ █░█ █▀█ █▄░█ █ █▄▀
+█░▀░█ █▀█ ░█░ █▄█ █▀█ █▄   █▀▄ █▄█ █▀▀ █░▀█ █ █░█
+(Ar©tur staff scholarship holder)
+-->
