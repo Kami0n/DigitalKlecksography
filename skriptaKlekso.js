@@ -721,7 +721,9 @@ $(document).ready(function() {
 			$('#desnoPlatna').hide();
 			
 			if(drip){
-				j = setTimeout('hideBttns();', 1000);
+				skrijStareUmetnine();
+				stopOdstevanje();
+				j = setTimeout('hideBttns();', 10000);
 			}
 		}
 	});
