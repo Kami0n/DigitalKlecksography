@@ -683,27 +683,24 @@ const fadeSpeedDesno = 400;
 
 // PRIKAZ desno STARIH UMETNIN (zadnjih 5)
 function prikaziStareUmetnineDesno(){
-	clearInterval(timerStareDesno);
+	
 	let steviloShranjenih = 1;
 	const prikaziZadnjih = 5;
+	
 	$.get( "highestFile.php", function( data ) {
 		steviloShranjenih = parseInt(data);
 		let stSlike = steviloShranjenih;
 		if(steviloShranjenih>1){
 			$('#desnoPlatna').show();
-			timerStareDesno = setInterval(function (){
-				$("#staraGrafikaDesno").attr("src","results/"+stSlike+".png");
-				stSlike--;
-				if(stSlike < (steviloShranjenih-prikaziZadnjih) || stSlike < 0){
-					stSlike = steviloShranjenih;
-				}
-			},casSlideshowDesno*1000);
+			$("#staraGrafikaDesno1").attr("src","results/"+stSlike+".png");
+			$("#staraGrafikaDesno2").attr("src","results/"+(stSlike-1)+".png");
+			$("#staraGrafikaDesno3").attr("src","results/"+(stSlike-2)+".png");
 		}
 	});
 }
 
 function skrijStareUmetnineDesno(){
-	clearInterval(timerStareDesno);
+	
 	$('#desnoPlatna').hide();
 }
 
@@ -713,7 +710,7 @@ $(document).ready(function() {
 	$(document).mousemove(function() {
 		if (!justHidden) {
 			justHidden = false;
-			clearInterval(timerStareDesno);
+			
 			clearTimeout(j);
 			$('nav').show();
 			$('body').css("cursor","unset");
