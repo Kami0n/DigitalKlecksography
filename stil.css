@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Fira+Sans:wght@300&display=swap');
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	color: white;
+	font-family: 'Fira Sans', sans-serif;
+	text-align: center;
+	font-size: 25px;
+	background:black;
+}
+#naslov{
+	font-size: 40px;
+}
+#colorPaletteText{
+	display:none;
+	margin-top: 20px;
+	align-content:stretch ;
+	position:absolute;
+	width:100%;
+	height:35px;
+}
+#colorPalette{
+	display:none;
+	margin-top: 60px;
+	align-content:stretch ;
+	position:absolute;
+	width:100%;
+	height:35px;
+	border: white 2px solid;
+}
+
+.colorOnPalette{
+	min-height: 35px;
+	flex: 1;
+}
+
+#webcamVideoFeed{
+	display:none;
+}
+#canvasWrapper{
+	width:100vw;
+	height:100vh;
+	justify-content:space-evenly;
+	align-items:center;
+	display:flex;
+	flex-direction: column;
+}
+#bothCanvases{
+	display:flex;
+}
+canvas{
+	display: block;
+	background:white;
+}
+#canvasDraw{
+	border-right: dashed black  10px;
+}
+#canvasDrawMirror{
+	display:none;
+}
+#displayMessageWrapper{
+	position:absolute;
+	margin: auto;
+	top: 0; left: 0; bottom: 0; right: 0;
+	width:500px;
+	height:500px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+#loadingCircle{
+	background:url('media/loading.svg');
+	width:150px;
+	height:150px;
+	background-size:contain;
+	
+}
+#errorText{
+	color:black;
+	background-color:#ccc;
+	border-radius: 25px;
+	padding:15px;
+	margin-top: 20px;
+}
+#infoText{
+	position:fixed;
+	margin: auto;
+	top: 15px; right: 15px;
+	color:#fff;
+	width:400px;
+	display:none;
+}
+#okolicaPlatna{
+	position:fixed;
+	width:100vw;
+	height:100vh;
+	top:0;
+	left:0;
+	display:grid;
+	grid-template-columns: minmax(0, 1fr) calc(100vh * 0.742 + 20px) minmax(0, 1fr);
+	align-items: center;
+	justify-items: center;
+}
+#wrapperWebcam{
+	width: calc(100% - 60px);
+	padding-top: 75%;
+	position: relative;
+}
+#webcamCanvas{
+	display:none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	border: white 2px solid;
+	background:none;
+}
+
+
+#navigacija{
+	position: absolute;
+	bottom:20px;
+	right:20px;
+}
+nav{
+	justify-self: end;
+	display:flex;
+	flex-direction: column;
+	justify-content:space-evenly;
+}
+nav button{
+	width: 200px;
+	display: inline-block;
+	margin:10px;
+	padding: 10px 15px;
+	display:block;
+	background-color: white;
+	border: none;
+	font-family: 'Fira Sans', sans-serif;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+}
+nav button:hover{
+	background-color: #808080;
+	color: black;
+}
+nav button:disabled{
+	background-color: #5a5a5a;
+	color: black;
+}
+
+.modal {
+	z-index: 105;
+	left: 0; top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: fixed;
+	justify-content:center;
+	align-items:center;
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+	font-family: 'Fira Sans', sans-serif;
+	color:black;
+	
+}
+.modal-content {
+	background-color: #fefefe;
+	padding: 40px;
+	width: 50vw;
+}
+.modal-content p {
+	margin:10px;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+#vzrokiModal p,#vzrokiModal li {
+	font-size: 17px;
+	text-align: left;
+}
+
+#stareGrafikeWrapper{
+	background-color: #fff;
+	display: flex;
+}
+#stareGrafikeWrapper img{
+	border:0;
+	border:none;
+}
+
+blockquote {
+	text-align: left;
+	background: #f9f9f9;
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+	color: #ccc;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+blockquote p {
+	display: inline;
+}
+
+#desnoPlatna{
+	width: 90%;
+}
+#desnoPlatna p {
+	margin-bottom:10px;
+}
+
+#stareGrafikeWrapperDesno{
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+}
+#stareGrafikeWrapperDesno img{
+	border:none;
+	background-color: #fff;
+	margin:20px;
+}
+
+#staraGrafikaDesno1{
+	max-width:55%;
+	max-height:55%;
+	width: auto;
+	height: auto;
+}
+#staraGrafikaDesno2{
+	max-width:50%;
+	max-height:50%;
+	width: auto;
+	height: auto;
+}
+#staraGrafikaDesno3{
+	max-width:45%;
+	max-height:45%;
+	width: auto;
+	height: auto;
+}
