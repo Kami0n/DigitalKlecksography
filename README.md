@@ -1,5 +1,5 @@
 # Digital-Klecksography
-Seminar project for subject Interaction and information design (FRI ULJ).
+Seminar project for subject [https://www.fri.uni-lj.si/en/course/63527](Interaction and information design (FRI ULJ)).
 
 ## DEMO: https://kami0n.github.io/Digital-Klecksography/
 
