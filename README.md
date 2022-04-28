@@ -1,7 +1,7 @@
 # Digital-Klecksography
-Seminar project for subject [https://www.fri.uni-lj.si/en/course/63527](Interaction and information design (FRI ULJ)).
+Seminar project for subject [https://www.fri.uni-lj.si/en/course/63527](Interaction and information design (FRI ULJ) ).
 
-## DEMO: https://kami0n.github.io/Digital-Klecksography/
+## DEMO: https://kami0n.github.io/DigitalKlecksography/
 
 ## What is klecksography?
 Klecksography is the art of creating mirror images using paper and ink. This technique was first used by Justinus Kerner, who incorporated the technique of klecksography into his poetry collections. The most famous user of this technique is certainly Hermann Rorschach, who created the so-called "inkblots", which he used to understand the state of an individual's psychological structure. Since the 1990s, psychologists have been using klecksography as a tool to study the subconscious.
